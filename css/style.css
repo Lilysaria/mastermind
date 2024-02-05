@@ -1,0 +1,35 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url( https://res.cloudinary.com/dgtqptpu1/image/upload/v1707114673/forest_i1vwz3.jpg);
+    
+    margin: 0; /* Optional: Remove default margin */
+  }
+
+  .container {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+  }
+.gameboard {
+    
+    width: 17em;
+    display: grid;
+    border-color:rgb(128, 67, 18) ;
+    border-style: double;
+    border-radius: 1em ;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(10, 2em);
+    background-color: rgb(95, 190, 202);
+   gap: 5px;
+}
+.hole {
+    
+    width: 1em;
+    height: 1em;
+    background-color: rgb(142, 132, 151);
+    border-radius: 50%;
+    border: 1px solid white;
+}
