@@ -5,23 +5,25 @@ body {
     height: 100vh;
     background-image: url( https://res.cloudinary.com/dgtqptpu1/image/upload/v1707114673/forest_i1vwz3.jpg);
     
-    margin: 0; /* Optional: Remove default margin */
+    margin: 0; 
   }
 
   .container {
-    display:flex;
-    justify-content: center;
-    align-items: center;
+    display:grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(10, 2em);
+    gap: 5px;
   }
 .gameboard {
-    
+    grid-column: 60 / span 40 ;
+    grid-row: 2/ span 10;
     width: 17em;
     display: grid;
     border-color:rgb(128, 67, 18) ;
     border-style: double;
     border-radius: 1em ;
-    grid-template-columns: repeat(4,1fr);
-    grid-template-rows: repeat(10, 2em);
+    grid-template-columns: repeat(4,2fr);
+    grid-template-rows: repeat(12, 2em);
     background-color: rgb(95, 190, 202);
    gap: 5px;
 }
@@ -32,4 +34,66 @@ body {
     background-color: rgb(142, 132, 151);
     border-radius: 50%;
     border: 1px solid white;
+}
+
+.menu {
+    display: grid;
+   
+   
+    border-color:rgb(128, 67, 18) ;
+    border-style: double;
+    border-radius: 1em ;
+    background-color: rgb(95, 190, 202);
+   gap: 5px;
+   grid-column: 105 / span 60 ;
+   grid-row: 2/ span 4;
+}
+.peg {
+    
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    border: 1px solid white;
+}
+
+.peg:nth-child(2) {
+    background-color: green;
+    }
+    .peg:nth-child(3) {
+        background-color: yellow;
+        }
+        .peg:nth-child(4) {
+            background-color: purple;
+            }
+            .peg:nth-child(5) {
+                background-color: teal;
+                }
+                .peg:nth-child(6) {
+                    background-color: red;
+                    }
+                    .peg:nth-child(7) {
+                        background-color: blue;
+                        }
+.container2 {
+    display: grid;
+    grid-template-columns: repeat(4, 2fr);
+    grid-template-rows: repeat(1, 2em);
+    gap: 5px;
+    align-items: center; /* Align items (secret code) vertically at the center */
+    justify-content: flex-start; /* Align content (secret code) to the start (left) */
+    margin-top: 10px; 
+    
+     
+    
+}
+.secret-code {
+    display:grid;
+    grid-template-columns: repeat(4, 1fr);
+    width: 1em;
+    height: 1em;
+    background-color: rgb(142, 132, 151);
+    border-radius: 50%;
+    border: 1px solid white;
+    margin-left: -520px;
+    margin-top: 350px;
 }
