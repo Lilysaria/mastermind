@@ -43,12 +43,6 @@ body {
 
 .menu {
     display: grid;
-   
-   
-    border-color:rgb(128, 67, 18) ;
-    border-style: double;
-    border-radius: 1em ;
-    background-color: rgb(95, 190, 202);
    gap: 5px;
    grid-column: 105 / span 60 ;
    grid-row: 2/ span 4;

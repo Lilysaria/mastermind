@@ -1,6 +1,7 @@
 /*----- constants -----*/
 
 /*----- app's state (variables) -----*/
+//first generates secret code
 document.addEventListener('DOMContentLoaded', function() {
 let secretCode = generateSecretCode();
 console.log("generated secret code:", secretCode);
@@ -17,7 +18,7 @@ const pegs = document.querySelectorAll('.peg');
                     const color = peg.getAttribute('data-color'); 
                     holes[currentHoleIndex].setAttribute('data-color', color); 
                     holes[currentHoleIndex].style.backgroundColor = color;
-                    currentHoleIndex++;
+                    currentHoleIndex++; //moves to the next hole
         
             });
         });
@@ -30,7 +31,7 @@ const pegs = document.querySelectorAll('.peg');
             }
             return guesses
         }
-        //this takes from row.start
+        //this takes from row.start. James helped to create this object
 const rowsCheck = {
         '0': {start: 0, end: 4},
         '1': {start: 4, end: 8},
@@ -52,7 +53,7 @@ document.getElementById('checkButton').addEventListener('click', function() {
     checkRowNumber++
 });
 
-
+//code to generate the secret code from an array
 function generateSecretCode() {
     const colors = ['green', 'yellow','purple','teal','red', 'blue'];
     let code = [];
@@ -64,17 +65,17 @@ function generateSecretCode() {
     return code;
 }
 
-//this function checks gueeses from the secret code!
+//this function starts the evaluation of the guess
 function evaluateGuesses(guesses, secretCode) {
     // Compare guesses with the secret code
-    let correctPosition = 0; //this variable checks if one of the colors matches exact to the secret code. If it is it increases count by 1(on the peggers). it is set to 0 because it hasnt been triggeredd yet
+    let correctPosition = 0; //this variable checks if one of the colors matches exact to the secret code. If it is it increases count by 1(on the peggers). it is set to 0 because it hasnt been triggeredd
     let correctColor = 0;
-    let usedIndices = [];
+    let usedIndices = []; //for not repeating peggers
 
-    guesses.forEach((guess, index) => {
-        if (guess === secretCode[index]) {
+    guesses.forEach((guess, index) => {   //for each guess iterates through the guesses array
+        if (guess === secretCode[index]) {  //checks if the current guess is exactly equal to the element in secret code at the same index, if so the guess is in the correct position and color
             correctPosition++;
-        } else if (secretCode.includes(guess) && !usedIndices.includes(secretCode.indexOf(guess))) {
+        } else if (secretCode.includes(guess) && !usedIndices.includes(secretCode.indexOf(guess))) {  //checks if guessed color exists anywhere in secretCode
             correctColor++
             usedIndices.push(secretCode.indexOf (guess));
             
