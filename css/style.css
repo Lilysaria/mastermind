@@ -2,107 +2,144 @@
     width: 100%;
     height: 100%;
     border-radius: 50%;
-  } 
+}
+
 body {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-image: url( https://res.cloudinary.com/dgtqptpu1/image/upload/v1707114673/forest_i1vwz3.jpg);
-    
-    margin: 0; 
-  }
-
-  .container {
-    display:grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(10, 2em);
-    gap: 5px;
-  }
-.gameboard {
-    grid-column: 60 / span 40 ;
-    grid-row: 2/ span 10;
-    width: 17em;
-    display: grid;
-    border-color:rgb(128, 67, 18) ;
-    border-style: double;
-    border-radius: 1em ;
-    grid-template-columns: repeat(4,2fr);
-    grid-template-rows: repeat(12, 2em);
-    background-color: rgb(95, 190, 202);
-   gap: 5px;
+    background-image: url(https://res.cloudinary.com/dgtqptpu1/image/upload/v1707114673/forest_i1vwz3.jpg);
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-.hole {
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 5px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px;
+    padding-left: 550px;
+}
+
+.gameboard {
+    grid-column: 1 / -1;
+    grid-row: 1 / span 5;
+    width: 100%;
+    max-width: 400px;
+    height: 650px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-color: rgb(128, 67, 18);
+    border-style: double;
+    border-radius: 1em;
+    background-color: rgb(46, 181, 208);
+    gap: 20px;
+    padding: 10px;
+    box-sizing: border-box;
     
-    width: 1em;
-    height: 1em;
+}
+
+.hole-container {
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 200px;
+    width: 100%;
+}
+
+.hole {
+    width: 1.5em;
+    height: 1.5em;
     background-color: rgb(142, 132, 151);
     border-radius: 50%;
     border: 1px solid white;
 }
 
 .menu {
-    display: grid;
-   gap: 5px;
-   grid-column: 105 / span 60 ;
-   grid-row: 2/ span 4;
+    display: flex;
+    justify-content: flex-end;
+    gap: 5px;
+    grid-column: 1 / -1;
+    grid-row: 12 / span 1;
+    padding: 10px;
+    margin-right: 550px;
+    margin-top: -670px;
 }
+
 .peg {
-    
-    width: 1em;
-    height: 1em;
+    width: 1.5em;
+    height: 1.5em;
     border-radius: 50%;
     border: 1px solid white;
+    margin: 5px;
+}
+.peg:nth-child(1) {
+    background-color: rgb(32, 14, 137);
 }
 
 .peg:nth-child(2) {
     background-color: green;
-    }
-    .peg:nth-child(3) {
-        background-color: yellow;
-        }
-        .peg:nth-child(4) {
-            background-color: purple;
-            }
-            .peg:nth-child(5) {
-                background-color: teal;
-                }
-                .peg:nth-child(6) {
-                    background-color: red;
-                    }
-                    .peg:nth-child(7) {
-                        background-color: blue;
-                        }
-                      
+}
+
+.peg:nth-child(3) {
+    background-color: yellow;
+}
+
+.peg:nth-child(4) {
+    background-color: purple;
+}
+
+.peg:nth-child(5) {
+    background-color: teal;
+}
+
+.peg:nth-child(6) {
+    background-color: rgb(237, 37, 37);
+}
+
+.peg:nth-child(7) {
+    background-color: rgb(143, 143, 190);
+}
+
 .container2 {
     display: grid;
-    grid-template-columns: repeat(4, 2fr);
+    grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(1, 2em);
     gap: 5px;
-    align-items: center; 
-    justify-content: flex-start; 
-    margin-top: 10px; 
-    
-     
-    
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 10px;
 }
+
 .secret-code {
-    display:grid;
+    display: grid;
     grid-template-columns: repeat(4, 1fr);
-    width: 1em;
-    height: 1em;
+    width: 1.5em;
+    height: 1.5em;
     background-color: rgb(142, 132, 151);
     border-radius: 50%;
     border: 1px solid white;
-    margin-left: -520px;
-    margin-top: 350px;
+    margin-left: -690px;
+    margin-top: 520px;
 }
+
 
 .peggers {
     width: 20px;
     display: flex;
     flex-wrap: wrap;
+    transform: translateX(-200px);
+    left: 300px;
 }
+
 .pegger {
     display: block;
     width: 6px;
@@ -113,11 +150,65 @@ body {
 }
 
 .pegger.correct {
-    background: #000; /* Black for correct guesses */
+    background: #000;
 }
 
 .pegger.misplaced {
-    background: #fff; /* White for misplaced guesses */
+    background: #fff;
 }
 
-  
+.check-button-container {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    position: relative;
+    transform: translate(-300px, -300px); 
+}
+
+#checkButton {
+    padding: 5px 5px;
+    font-size: 16px;
+    position: relative;
+    left: -300px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(20, 2em);
+        max-width: 100%;
+    }
+
+    .gameboard {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(24, 3em);
+        height: auto;
+        max-width: 100%;
+    }
+
+    .menu {
+        justify-content: center; 
+        padding: 5px;
+        margin-right: 0;
+    }
+    
+    .secret-code {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        width: 8em;
+        height: 2em;
+        background-color: rgb(142, 132, 151);
+        border-radius: 50%;
+        border: 1px solid white;
+        transform: translateX(350px);
+        margin-top: 350px;
+    }
+    
+    .secret-code .hole {
+        width: 1.5em;
+        height: 1.5em;
+        background-color: rgb(142, 132, 151);
+        border-radius: 50%;
+        border: 1px solid white;
+    }
+}
