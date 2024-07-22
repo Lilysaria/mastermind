@@ -12,8 +12,7 @@
 <body>
     <div class="container">
         <div class="gameboard">
-
-            <div style="display: flex; justify-content: space-between; width: 100%;">
+            <div class="hole-container" style="display: flex; justify-content: space-between; width: 100%;">
                 <div style="display: flex;">
                     <div class="hole" id="hole1"></div>
                     <div class="hole" id="hole2"></div>
@@ -28,7 +27,7 @@
                 </div>
             </div>
             <!-- Row 2 -->
-            <div style="display: flex; justify-content: space-between; width: 100%;">
+            <div class="hole-container" style="display: flex; justify-content: space-between; width: 100%;">
                 <div style="display: flex;">
                     <div class="hole" id="hole5"></div>
                     <div class="hole" id="hole6"></div>
@@ -42,7 +41,8 @@
                     <div class="pegger"></div>
                 </div>
             </div>
-            <div style="display: flex; justify-content: space-between; width: 100%;">
+            <!-- Row 3 -->
+            <div class="hole-container" style="display: flex; justify-content: space-between; width: 100%;">
                 <div style="display: flex;">
                     <div class="hole" id="hole9"></div>
                     <div class="hole" id="hole10"></div>
@@ -56,7 +56,8 @@
                     <div class="pegger"></div>
                 </div>
             </div>
-            <div style="display: flex; justify-content: space-between; width: 100%;">
+            <!-- Row 4 -->
+            <div class="hole-container" style="display: flex; justify-content: space-between; width: 100%;">
                 <div style="display: flex;">
                     <div class="hole" id="hole13"></div>
                     <div class="hole" id="hole14"></div>
@@ -70,7 +71,8 @@
                     <div class="pegger"></div>
                 </div>
             </div>
-            <div style="display: flex; justify-content: space-between; width: 100%;">
+            <!-- Row 5 -->
+            <div class="hole-container" style="display: flex; justify-content: space-between; width: 100%;">
                 <div style="display: flex;">
                     <div class="hole" id="hole17"></div>
                     <div class="hole" id="hole18"></div>
@@ -84,7 +86,8 @@
                     <div class="pegger"></div>
                 </div>
             </div>
-            <div style="display: flex; justify-content: space-between; width: 100%;">
+            <!-- Row 6 -->
+            <div class="hole-container" style="display: flex; justify-content: space-between; width: 100%;">
                 <div style="display: flex;">
                     <div class="hole" id="hole21"></div>
                     <div class="hole" id="hole22"></div>
@@ -98,7 +101,8 @@
                     <div class="pegger"></div>
                 </div>
             </div>
-            <div style="display: flex; justify-content: space-between; width: 100%;">
+            <!-- Row 7 -->
+            <div class="hole-container" style="display: flex; justify-content: space-between; width: 100%;">
                 <div style="display: flex;">
                     <div class="hole" id="hole25"></div>
                     <div class="hole" id="hole26"></div>
@@ -112,7 +116,8 @@
                     <div class="pegger"></div>
                 </div>
             </div>
-            <div style="display: flex; justify-content: space-between; width: 100%;">
+            <!-- Row 8 -->
+            <div class="hole-container" style="display: flex; justify-content: space-between; width: 100%;">
                 <div style="display: flex;">
                     <div class="hole" id="hole29"></div>
                     <div class="hole" id="hole30"></div>
@@ -126,7 +131,8 @@
                     <div class="pegger"></div>
                 </div>
             </div>
-            <div style="display: flex; justify-content: space-between; width: 100%;">
+            <!-- Row 9 -->
+            <div class="hole-container" style="display: flex; justify-content: space-between; width: 100%;">
                 <div style="display: flex;">
                     <div class="hole" id="hole33"></div>
                     <div class="hole" id="hole34"></div>
@@ -140,7 +146,8 @@
                     <div class="pegger"></div>
                 </div>
             </div>
-            <div style="display: flex; justify-content: space-between; width: 100%;">
+            <!-- Row 10 -->
+            <div class="hole-container" style="display: flex; justify-content: space-between; width: 100%;">
                 <div style="display: flex;">
                     <div class="hole" id="hole37"></div>
                     <div class="hole" id="hole38"></div>
@@ -156,15 +163,13 @@
             </div>
         </div>
         <div class="menu">
-
             <div class="peg" data-color="blue"></div>
             <div class="peg" data-color="green"></div>
             <div class="peg" data-color="yellow"></div>
             <div class="peg" data-color="purple"></div>
-            <div class="peg" data-color="teal">red</div>
-            <div class="peg" data-color="red">teal</div>
+            <div class="peg" data-color="teal"></div>
+            <div class="peg" data-color="red"></div>
         </div>
-    </div>
     </div>
     <div class="container2">
         <div class="secret-code">
@@ -175,15 +180,10 @@
         </div>
     </div>
     <div class="peggers">
-        <div class="pegger correct"></div>
-        <div class="pegger misplaced"></div>
-        <div class="pegger"></div>
-        <div class="pegger"></div>
+      
     </div>
-    <div class="check-button-container" style="margin-top: 10px;">
+    <div class="check-button-container">
         <button id="checkButton">Check</button>
-
-    </div>
     </div>
 </body>
 
