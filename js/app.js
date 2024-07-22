@@ -12,7 +12,7 @@ let checkRowNumber = 0;
 const holes = document.querySelectorAll('.gameboard .hole'); 
 const pegs = document.querySelectorAll('.peg');
 /*----- event listeners -----*/
-    pegs.forEach((peg) => {
+    pegs.forEach((peg) => {   //adds event that gets colored peg and moves it to the hole
             peg.addEventListener('click', function() {
                
                     const color = peg.getAttribute('data-color'); 
@@ -70,12 +70,12 @@ function evaluateGuesses(guesses, secretCode) {
     // Compare guesses with the secret code
     let correctPosition = 0; //this variable checks if one of the colors matches exact to the secret code. If it is it increases count by 1(on the peggers). it is set to 0 because it hasnt been triggeredd
     let correctColor = 0;
-    let usedIndices = []; //for not repeating peggers
+    let usedIndices = []; //prevents double counting
 
     guesses.forEach((guess, index) => {   //for each guess iterates through the guesses array
         if (guess === secretCode[index]) {  //checks if the current guess is exactly equal to the element in secret code at the same index, if so the guess is in the correct position and color
             correctPosition++;
-        } else if (secretCode.includes(guess) && !usedIndices.includes(secretCode.indexOf(guess))) {  //checks if guessed color exists anywhere in secretCode
+        } else if (secretCode.includes(guess) && !usedIndices.includes(secretCode.indexOf(guess))) {  //checks if guessed color exists anywhere in secretCode returns true if it is false if not
             correctColor++
             usedIndices.push(secretCode.indexOf (guess));
             
@@ -87,6 +87,14 @@ youWin(correctPosition); //after evaluateGuesses
     function youWin (correctPosition) {
         if (correctPosition === 4) {
         console.log('you win'); 
+        revealSecretCode();
+        }
+    }
+    
+    function revealSecretCode() {
+        const secretCodeHoles = document.querySelectorAll('.secret-code .hole');
+        for (let i = 0; i < secretCode.length; i++) {
+            secretCodeHoles[i].style.backgroundColor = secretCode[i];
         }
     }
 //function to update peggers
@@ -94,13 +102,13 @@ function updatePeggers(correctPosition,correctColor) {
     const allPeggers= document.querySelectorAll('.peggers')
     const peggers = allPeggers[checkRowNumber].children
     console.log(peggers)
-    let correctPositionCounter = 0;
+    let correctPositionCounter = 0; //keeps track of how many peggers are red
     let correctColorCounter = 0;
 
     for (let i = 0; i < peggers.length; i++) {
-        if (correctPositionCounter < correctPosition) {
+        if (correctPositionCounter < correctPosition) { //if the correctPositionCounter is less than the correctPosition value (the number of guesses that are exactly right), the function colors a peg red to indicate a correct guess
             peggers[i].style.background = 'red';
-            correctPositionCounter++;
+            correctPositionCounter++; 
         } else if 
         (correctColorCounter < correctColor) {
             peggers[i].style.background = 'white';
