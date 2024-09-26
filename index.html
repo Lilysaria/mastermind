@@ -10,6 +10,7 @@
 </head>
 
 <body>
+    <h1 class="game-title">Mastermind</h1>
     <div class="container">
         <div class="gameboard">
             <div class="hole-container" style="display: flex; justify-content: space-between; width: 100%;">
@@ -163,14 +164,16 @@
             </div>
         </div>
         <div class="menu">
-            <div class="peg" data-color="blue"></div>
-            <div class="peg" data-color="green"></div>
-            <div class="peg" data-color="yellow"></div>
-            <div class="peg" data-color="purple"></div>
-            <div class="peg" data-color="teal"></div>
-            <div class="peg" data-color="red"></div>
+            <div class="peg" data-color="#5d3fd3" style="background-color: #5d3fd3;"></div>
+            <div class="peg" data-color="#1e90ff" style="background-color: #1e90ff;"></div>
+            <div class="peg" data-color="#ff77ff" style="background-color: #ff77ff;"></div>
+            <div class="peg" data-color="#9370db" style="background-color: #9370db;"></div>
+            <div class="peg" data-color="#00bfff" style="background-color: #00bfff;"></div>
+            <div class="peg" data-color="#f0e68c" style="background-color: #f0e68c;"></div>
         </div>
+        
     </div>
+    <div class="glowing-line"></div>
     <div class="container2">
         <div class="secret-code">
             <div class="hole"></div>
@@ -185,6 +188,25 @@
     <div class="check-button-container">
         <button id="checkButton">Check</button>
     </div>
-</body>
-
-</html>
+        </div>
+        <div class="honeycomb-container">
+            <div class="honeycomb">
+                <button class="honeycomb-button">Play Again</button>
+            </div>
+            <div class="honeycomb">
+                <button id="howToPlayButton" class="honeycomb-button">How to Play</button>
+            </div>
+            <div class="honeycomb">
+                <button class="honeycomb-button">Delete</button>
+            </div>
+            </div>
+            <div id="howToPlayModal" class="modal hidden">
+                <div class="modal-content">
+                    <h2>How to Play</h2>
+                    <p>Instructions </p>
+                    <button id="closeModalButton">Close</button>
+                </div>
+            </div>
+            
+            </body>
+            </html>
