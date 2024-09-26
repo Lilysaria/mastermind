@@ -1,5 +1,15 @@
 /*----- constants -----*/
-
+const instructions = `
+    <p>Your goal is to guess the secret color code.</p>
+    <p>The code consists of 4 colored pegs, selected from 6 available colors. Try to guess the code in as few attempts as possible.</p>
+    <p>Each time you make a guess, the game will give you feedback in the form of smaller pegs:</p>
+    <ul>
+        <li>A red peg means you have one correct color in the correct position.</li>
+        <li>A white peg means you have a correct color, but it's in the wrong position.</li>
+    </ul>
+    <p>You have 10 attempts to guess the secret code.</p>
+    <p>Good luck!</p>
+`;
 /*----- app's state (variables) -----*/
 //first generates secret code
 document.addEventListener('DOMContentLoaded', function() {
@@ -49,6 +59,8 @@ const rowsCheck = {
         }
 
         howToPlayButton.addEventListener('click', function() {
+            const instructionsElement = document.getElementById('instructions');
+            instructionsElement.innerHTML = instructions; 
             howToPlayModal.classList.remove('hidden');
             howToPlayModal.classList.add('show');
         });
