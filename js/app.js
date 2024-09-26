@@ -11,6 +11,9 @@ let checkRowNumber = 0;
 
 const holes = document.querySelectorAll('.gameboard .hole'); 
 const pegs = document.querySelectorAll('.peg');
+const howToPlayButton = document.getElementById('howToPlayButton');
+const howToPlayModal = document.getElementById('howToPlayModal');
+const closeModalButton = document.getElementById('closeModalButton');
 /*----- event listeners -----*/
     pegs.forEach((peg) => {   //adds event that gets colored peg and moves it to the hole
             peg.addEventListener('click', function() {
@@ -44,6 +47,17 @@ const rowsCheck = {
         '8': {start: 32, end:36},
         '9': {start: 36, end:40},
         }
+
+        howToPlayButton.addEventListener('click', function() {
+            howToPlayModal.classList.remove('hidden');
+            howToPlayModal.classList.add('show');
+        });
+        
+        closeModalButton.addEventListener('click', function() {
+            howToPlayModal.classList.add('hidden');
+            howToPlayModal.classList.remove('show');
+        });
+        
 /*----- functions -----*/
 document.getElementById('checkButton').addEventListener('click', function() {
    
@@ -55,7 +69,7 @@ document.getElementById('checkButton').addEventListener('click', function() {
 
 //code to generate the secret code from an array
 function generateSecretCode() {
-    const colors = ['green', 'yellow','purple','teal','red', 'blue'];
+    const colors = ['#5d3fd3', '#1e90ff', '#ff77ff', '#9370db', '#00bfff', '#f0e68c'];
     let code = [];
 
     for (let i = 0; i < 4; i++) {
