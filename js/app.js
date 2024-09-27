@@ -25,6 +25,8 @@ const howToPlayButton = document.getElementById('howToPlayButton');
 const howToPlayModal = document.getElementById('howToPlayModal');
 const closeModalButton = document.getElementById('closeModalButton');
 const playAgainButton = document.querySelector('.honeycomb-button');
+const deleteButton = document.getElementById('deleteButton');
+
 /*----- event listeners -----*/
     pegs.forEach((peg) => {   //adds event that gets colored peg and moves it to the hole
             peg.addEventListener('click', function() {
@@ -36,6 +38,19 @@ const playAgainButton = document.querySelector('.honeycomb-button');
         
             });
         });
+
+            // Undo function for the current row
+    deleteButton.addEventListener('click', function () {
+        const rowStart = rowsCheck[checkRowNumber].start;
+        const rowEnd = rowsCheck[checkRowNumber].end;
+
+        if (currentHoleIndex > rowStart) { // only allow undo within the current row
+            currentHoleIndex--; // Move back to the last peg
+            holes[currentHoleIndex].style.backgroundColor = ''; // clear the color
+            holes[currentHoleIndex].removeAttribute('data-color'); // remove the data attribute
+        }
+    });
+
         //this function checks each row and stops each row to check
         function checkRow(row){
             let guesses = [];
