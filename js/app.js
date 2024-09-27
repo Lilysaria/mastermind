@@ -24,6 +24,7 @@ const pegs = document.querySelectorAll('.peg');
 const howToPlayButton = document.getElementById('howToPlayButton');
 const howToPlayModal = document.getElementById('howToPlayModal');
 const closeModalButton = document.getElementById('closeModalButton');
+const playAgainButton = document.querySelector('.honeycomb-button');
 /*----- event listeners -----*/
     pegs.forEach((peg) => {   //adds event that gets colored peg and moves it to the hole
             peg.addEventListener('click', function() {
@@ -70,6 +71,9 @@ const rowsCheck = {
             howToPlayModal.classList.remove('show');
         });
         
+        playAgainButton.addEventListener('click', function() {
+            resetGame();
+        });
 /*----- functions -----*/
 document.getElementById('checkButton').addEventListener('click', function() {
    
@@ -89,6 +93,31 @@ function generateSecretCode() {
             code.push(colors[randomIndex]);
     }
     return code;
+}
+
+// Reset the game
+function resetGame() {
+    secretCode = generateSecretCode();
+    console.log("New game started, secret code:", secretCode);
+
+    // Reset game state variables
+    currentHoleIndex = 0;
+    checkRowNumber = 0;
+
+    // Clear the holes (remove colors)
+    holes.forEach((hole) => {
+        hole.style.backgroundColor = '';
+        hole.removeAttribute('data-color');
+    });
+
+    // Clear the peggers
+    const allPeggers = document.querySelectorAll('.peggers');
+    allPeggers.forEach((peggerContainer) => {
+        const peggers = peggerContainer.children;
+        for (let i = 0; i < peggers.length; i++) {
+            peggers[i].style.backgroundColor = '';
+        }
+    });
 }
 
 //this function starts the evaluation of the guess
